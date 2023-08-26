@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1c154e37bf78b469f0eb2e073c5126, type: 3}
+  m_Name: Snowman Stats
+  m_EditorClassIdentifier: 
+  Health: 0
+  IsAlive: 0
+  IsInvincible: 0
+  IsTrackingPlayer: 1
+  HasControl: 1
+  CurrentPosition: {x: -12.914009, y: 0.10437322}
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  _wallLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  _enemyName: Snowman
+  _grounderDistance: 0.05
+  _wallDetectorSize: {x: 1, y: 0.25}
+  _playerSearchDetectionSize: {x: 15, y: 5}
+  _playerAttackDetectionSize: {x: 5, y: 3}
+  _isWalkingEnemy: 1
+  _isFlyingEnemy: 0
+  _isJumpingEnemy: 0
+  _walkSpeed: 100
+  _flySpeed: -1
+  _jumpStrength: -1
+  _decelerationRate: 0.01
+  _maxHealth: 5
+  _invincibilityTime: 0.25
+  _attackCooldownTime: 1.5
+  _baseDamage: 1
+  _baseKnockback: {x: 5, y: 8}
