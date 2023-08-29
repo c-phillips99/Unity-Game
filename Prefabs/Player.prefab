@@ -30020,7 +30020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 5fd318384d8c0064cbe0e9e8278a002d, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 9863d656b485ff54ebac290d9ecba408, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -30035,24 +30035,60 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 39291294-decc-4bde-828e-d02f5e0e1c71
-    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow,/XInputControllerWindows/dpad]
+    m_ActionId: 825d5149-747c-4556-86dd-72cb864860cf
+    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 0c02acad-80d1-4a54-949e-baefddab88d5
-    m_ActionName: Player/Jump[/Keyboard/c,/XInputControllerWindows/buttonSouth,/Keyboard/space]
+    m_ActionId: 85d18c79-47a5-409e-9911-50b2c768063b
+    m_ActionName: Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 4a78c075-3464-45ca-8581-812805a2fdf7
-    m_ActionName: Player/Dash[/Keyboard/shift,/XInputControllerWindows/buttonEast]
+    m_ActionId: cea12bd4-1254-4a21-87a8-9b69c012643a
+    m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger,/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 6030ad00-15b1-4c52-97de-bdf0f91de944
-    m_ActionName: Player/Attack[/Keyboard/z,/XInputControllerWindows/buttonWest,/Mouse/leftButton]
+    m_ActionId: e48692c2-17ac-40a5-9520-5570483d7e21
+    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: fac85392-9cd4-4c47-a8da-8911e5b74689
-    m_ActionName: Player/ExampleAction[/Keyboard/e]
+    m_ActionId: e488a390-232b-438f-91c9-edd638afd45b
+    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 814810a7-8184-4eae-a523-4993d6a97e33
+    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e46dc18d-ef4e-48b1-b0a6-9800c625f1fb
+    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fc4f2c3a-0d91-48e0-901c-7a6722456886
+    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 379865eb-abe3-4c81-8485-6aa83b1ad50d
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8754cfd4-dc8e-46a1-ae8b-b24098ac2b0d
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 244295dc-0793-451a-9629-9fbce57baf2e
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6b6e57bc-bbe7-4695-a6f9-66ac142c7c44
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c31a9cf5-497d-419f-b038-fb863c588dc2
+    m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ac8109d9-80ef-4c7b-8ffa-ad854ce788f9
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

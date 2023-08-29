@@ -19,6 +19,9 @@ namespace TarodevController {
         [Tooltip("Set this to the layer your ladders are on")]
         public LayerMask LadderLayer;
 
+        [Tooltip("Set this to the layer your interactables are on")]
+        public LayerMask InteractableLayer;
+
         [Header("INPUT")]
         [Tooltip("Makes all Input snap to an integer. Prevents gamepads from walking slowly. Recommended value is true to ensure gamepad/keybaord parity.")]
         public bool SnapInput = true;
@@ -195,6 +198,10 @@ namespace TarodevController {
 
         [Tooltip("Knockback Dealt")]
         public Vector2 BaseKnockback = new Vector2 (5, 1);
+
+        [Header("INTERACTABLES")]
+        [Tooltip("The size in which the player will look for interactable objects")]
+        public float InteratableDetectorSize = 2f;
 
         [Header("EXTERNAL")] 
         [Tooltip("The rate at which external velocity decays. Should be close to Fall Acceleration")]

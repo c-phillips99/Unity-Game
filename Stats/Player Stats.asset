@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b823639e543694d890e5f8a77be1af, type: 3}
   m_Name: Player Stats
   m_EditorClassIdentifier: 
-  Health: 5
+  Health: 9
   IsAlive: 1
   IsInvincible: 0
-  CurrentPosition: {x: -12.988162, y: -0.0074654818}
+  CurrentPosition: {x: 10.036079, y: 1.9349389}
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -25,6 +25,9 @@ MonoBehaviour:
   LadderLayer:
     serializedVersion: 2
     m_Bits: 0
+  InteractableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   SnapInput: 0
   VerticalDeadzoneThreshold: 0.3
   HorizontalDeadzoneThreshold: 0.1
@@ -81,6 +84,7 @@ MonoBehaviour:
   InvincibilityTime: 0.25
   BaseDamage: 1
   BaseKnockback: {x: 5, y: 1}
+  InteratableDetectorSize: 2
   ExternalVelocityDecay: 100
   ShowWallDetection: 1
   ShowLedgeDetection: 1

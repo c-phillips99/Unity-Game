@@ -48,6 +48,7 @@ namespace TarodevController {
         public bool ClimbingLadder { get; private set; }
         public bool GrabbingLedge { get; private set; }
         public bool ClimbingLedge { get; private set; }
+        public bool Interacting { get; private set; }
 
         public virtual void ApplyVelocity(Vector2 vel, UnitForce forceType) {
             if (forceType == UnitForce.Burst) _speed += vel;
@@ -136,6 +137,8 @@ namespace TarodevController {
             HandleVertical();
             ApplyMovement();
 
+            HandleInteractable();
+
             _stats.CurrentPosition = _rb.position;
         }
 
@@ -162,7 +165,7 @@ namespace TarodevController {
             _ceilingHitCount = Physics2D.CapsuleCastNonAlloc(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _ceilingHits, _stats.GrounderDistance, ~_stats.PlayerLayer);
 
             // Walls and Ladders
-            var bounds = GetWallDetectionBounds();
+            var bounds = GetBounds(_stats.WallDetectorSize);
             _wallHitCount = Physics2D.OverlapBoxNonAlloc(bounds.center, bounds.size, 0, _wallHits, _stats.ClimbableLayer);
 
             _hittingWall = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, new Vector2(_input.FrameInput.Move.x, 0), _stats.GrounderDistance, ~_stats.PlayerLayer);
@@ -180,9 +183,9 @@ namespace TarodevController {
             return hit.collider;
         }
 
-        protected virtual Bounds GetWallDetectionBounds() {
+        protected virtual Bounds GetBounds(Vector2 size) {
             var colliderOrigin = _rb.position + _standingCollider.offset;
-            return new Bounds(colliderOrigin, _stats.WallDetectorSize);
+            return new Bounds(colliderOrigin, size);
         }
 
         protected virtual void HandleCollisions() {
@@ -666,13 +669,39 @@ namespace TarodevController {
             _currentExternalVelocity = Vector2.MoveTowards(_currentExternalVelocity, Vector2.zero, _stats.ExternalVelocityDecay * Time.fixedDeltaTime);
         }
 
+        #region Interacting
+
+        protected virtual void HandleInteractable()
+        {
+            Vector2 circleOrigin = _rb.position + _standingCollider.offset;
+            Collider2D interactableCollider = Physics2D.OverlapCircle(circleOrigin, _stats.InteratableDetectorSize, _stats.InteractableLayer);
+            if (interactableCollider == null) return;
+            
+            // display interactable on hud
+
+            if (FrameInput.Interact)
+            {
+                Interacting = true;
+                IInteractable interactable = interactableCollider.GetComponent<IInteractable>();
+                interactable.Interact(this);
+                TakeAwayControl();
+            }
+        }
+
+        public virtual void EndInteraction()
+        {
+            ReturnControl();
+        }
+
+        #endregion
+
 #if UNITY_EDITOR
         private void OnDrawGizmos() {
             if (_stats == null) return;
 
             if (_stats.ShowWallDetection && _standingCollider != null) {
                 Gizmos.color = Color.white;
-                var bounds = GetWallDetectionBounds();
+                var bounds = GetBounds(_stats.WallDetectorSize);
                 Gizmos.DrawWireCube(bounds.center, bounds.size);
             }
 

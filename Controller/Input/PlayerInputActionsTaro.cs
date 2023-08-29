@@ -17,10 +17,10 @@ using UnityEngine.InputSystem.Utilities;
 
 namespace TarodevController
 {
-    public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
+    public partial class PlayerInputActionsTaro: IInputActionCollection2, IDisposable
     {
         public InputActionAsset asset { get; }
-        public @PlayerInputActions()
+        public PlayerInputActionsTaro()
         {
             asset = InputActionAsset.FromJson(@"{
     ""name"": ""PlayerInputActions"",
@@ -448,8 +448,8 @@ namespace TarodevController
         private readonly InputAction m_Player_ExampleAction;
         public struct PlayerActions
         {
-            private @PlayerInputActions m_Wrapper;
-            public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+            private PlayerInputActionsTaro m_Wrapper;
+            public PlayerActions(PlayerInputActionsTaro wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
             public InputAction @Dash => m_Wrapper.m_Player_Dash;

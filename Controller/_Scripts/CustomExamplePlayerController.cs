@@ -6,5 +6,5 @@ using TarodevController;
 public class CustomExamplePlayerController : PlayerController
 {
     // Here we're overriding how we handle crouch. Originally we used the y input axis to determine if we should crouch.
-    protected override bool CrouchPressed => FrameInput.ExampleActionHeld;
+    //protected override bool CrouchPressed => FrameInput.ExampleActionHeld;
 }
