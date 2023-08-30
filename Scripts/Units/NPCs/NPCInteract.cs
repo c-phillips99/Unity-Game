@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class NPCInteract : MonoBehaviour, IInteractable
 {
+    [SerializeField] private TextAsset inkDialogueJSON;
+
     public void Interact(PlayerController playerController)
     {
-        Debug.Log("Interacted with NPC");
+        if (!DialogueManager.Instance.DialogueIsPlaying) DialogueManager.Instance.StartDialogue(inkDialogueJSON);
     }
 }

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
-    public static CombatManager Instance;
+    public static CombatManager Instance { get; private set; }
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null) Instance = this;
+        
     }
 
     public void DealAttack(int damage, Vector2 knockback, Collider2D attackReceiver, GameObject attackDealer)

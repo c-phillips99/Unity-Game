@@ -16,12 +16,12 @@ namespace TarodevController {
         [SerializeField] private CapsuleCollider2D _standingCollider;
         [SerializeField] private CapsuleCollider2D _crouchingCollider;
         private CapsuleCollider2D _col; // current active collider
-        private PlayerInput _input;
+        // private PlayerInput _input;
         private PlayerAnimator _animator;
         private PlayerCombat _combat;
         private bool _cachedTriggerSetting;
 
-        protected FrameInput FrameInput;
+        private FrameInput FrameInput;
         private Vector2 _speed;
         private Vector2 _currentExternalVelocity;
         private int _fixedFrame;
@@ -48,7 +48,6 @@ namespace TarodevController {
         public bool ClimbingLadder { get; private set; }
         public bool GrabbingLedge { get; private set; }
         public bool ClimbingLedge { get; private set; }
-        public bool Interacting { get; private set; }
 
         public virtual void ApplyVelocity(Vector2 vel, UnitForce forceType) {
             if (forceType == UnitForce.Burst) _speed += vel;
@@ -74,7 +73,7 @@ namespace TarodevController {
 
         protected virtual void Awake() {
             _rb = GetComponent<Rigidbody2D>();
-            _input = GetComponent<PlayerInput>();
+            //_input = GetComponent<PlayerInput>();
             _animator = GetComponentInChildren<PlayerAnimator>();
             _combat = GetComponent<PlayerCombat>();
             _cachedTriggerSetting = Physics2D.queriesHitTriggers;
@@ -99,7 +98,7 @@ namespace TarodevController {
         }
 
         protected virtual void GatherInput() {
-            FrameInput = _input.FrameInput;
+            FrameInput = PlayerInput.FrameInput;
 
             if (_stats.SnapInput)
             {
@@ -168,7 +167,7 @@ namespace TarodevController {
             var bounds = GetBounds(_stats.WallDetectorSize);
             _wallHitCount = Physics2D.OverlapBoxNonAlloc(bounds.center, bounds.size, 0, _wallHits, _stats.ClimbableLayer);
 
-            _hittingWall = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, new Vector2(_input.FrameInput.Move.x, 0), _stats.GrounderDistance, ~_stats.PlayerLayer);
+            _hittingWall = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, new Vector2(PlayerInput.FrameInput.Move.x, 0), _stats.GrounderDistance, ~_stats.PlayerLayer);
 
             Physics2D.queriesHitTriggers = true; // Ladders are set to Trigger
             _ladderHitCount = Physics2D.OverlapBoxNonAlloc(bounds.center, bounds.size, 0, _ladderHits, _stats.LadderLayer);
@@ -664,10 +663,12 @@ namespace TarodevController {
 
         #endregion
 
+        #region Movement
         protected virtual void ApplyMovement() {
             _rb.velocity = _speed + _currentExternalVelocity;
             _currentExternalVelocity = Vector2.MoveTowards(_currentExternalVelocity, Vector2.zero, _stats.ExternalVelocityDecay * Time.fixedDeltaTime);
         }
+        #endregion
 
         #region Interacting
 
@@ -681,10 +682,8 @@ namespace TarodevController {
 
             if (FrameInput.Interact)
             {
-                Interacting = true;
                 IInteractable interactable = interactableCollider.GetComponent<IInteractable>();
                 interactable.Interact(this);
-                TakeAwayControl();
             }
         }
 

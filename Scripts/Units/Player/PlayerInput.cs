@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 namespace TarodevController {
     public class PlayerInput : MonoBehaviour {
-        public FrameInput FrameInput { get; private set; }
+        public static FrameInput FrameInput { get; private set; }
 
         private void Update() => FrameInput = Gather();
 
