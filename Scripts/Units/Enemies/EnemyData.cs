@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemyData", menuName = "EnemyData")]
+[CreateAssetMenu(fileName = "EnemyData", menuName = "Data/EnemyData")]
 public class EnemyData : ScriptableObject
 {
     [HideInInspector] public int Health;

@@ -29882,7 +29882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61c64124c8575748994f087b9dc1b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: 8f3e4ac96e9fac84e96172956137e1c4, type: 2}
+  _data: {fileID: 11400000, guid: 8f3e4ac96e9fac84e96172956137e1c4, type: 2}
   _standingCollider: {fileID: 3836054527727189974}
   _crouchingCollider: {fileID: 3836054527727189971}
 --- !u!114 &3836054527727189970
@@ -30089,6 +30089,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ac8109d9-80ef-4c7b-8ffa-ad854ce788f9
     m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 867ae24c-7b06-4a90-8d2f-1714b5021474
+    m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2fa1e16b-01b9-45fe-a1f0-2a0273de0645
+    m_ActionName: Player/Dash[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1b203ea5-8116-4e22-9292-db678754f694
+    m_ActionName: Player/Attack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

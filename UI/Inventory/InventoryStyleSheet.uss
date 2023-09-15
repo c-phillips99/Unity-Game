@@ -1,0 +1,35 @@
+.main-container {
+    background-color: rgba(0, 0, 0, 0.74);
+}
+
+.title {
+    font-size: 100px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    -unity-text-outline-color: rgba(255, 255, 255, 0.39);
+    -unity-text-outline-width: 5px;
+    align-self: center;
+    position: absolute;
+    top: 2%;
+}
+
+.main-inventory-pannel {
+    border-left-color: rgb(183, 183, 183);
+    border-right-color: rgb(183, 183, 183);
+    border-top-color: rgb(183, 183, 183);
+    border-bottom-color: rgb(183, 183, 183);
+    border-left-width: 25px;
+    border-right-width: 25px;
+    border-top-width: 25px;
+    border-bottom-width: 25px;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+    background-color: rgb(214, 213, 213);
+    align-self: center;
+}

@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="main-container" class="main-container" style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="Inventory" display-tooltip-when-elided="true" name="title" class="title" />
+        <ui:VisualElement name="main-inventory-pannel" class="main-inventory-pannel" />
+    </ui:VisualElement>
+</ui:UXML>

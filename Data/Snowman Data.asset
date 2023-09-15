@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f1c154e37bf78b469f0eb2e073c5126, type: 3}
-  m_Name: Snowman Stats
+  m_Name: Snowman Data
   m_EditorClassIdentifier: 
   Health: 0
   IsAlive: 0

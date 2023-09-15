@@ -1,0 +1,43 @@
+:root {
+    background-image: url('project://database/Assets/UI/MainMenu/textfx.jpg?fileID=2800000&guid=1ce7aa3c2a5ceae45afa234337457553&type=3#textfx');
+}
+
+#Buttons {
+    left: 37%;
+    top: 73%;
+    background-color: rgba(0, 0, 0, 0);
+    width: auto;
+}
+
+Button {
+    background-color: rgb(92, 255, 254);
+    min-width: 20%;
+    font-size: 70px;
+    -unity-font-style: bold;
+    margin-top: 1%;
+    flex-basis: auto;
+    flex-direction: column;
+    border-left-color: rgb(84, 146, 196);
+    border-right-color: rgb(84, 146, 196);
+    border-top-color: rgb(84, 146, 196);
+    border-bottom-color: rgb(84, 146, 196);
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: rgb(0, 0, 0);
+    min-height: 10%;
+    max-width: 50%;
+    max-height: 100%;
+}
+
+Button:hover {
+    background-color: rgb(92, 196, 255);
+    transition-duration: 0.2s;
+    font-size: 75px;
+    transition-timing-function: ease;
+}

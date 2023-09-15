@@ -9,7 +9,7 @@ public class CombatManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this;
-        
+        else Debug.LogWarning("Attempted to create second instance of Combat Manager");
     }
 
     public void DealAttack(int damage, Vector2 knockback, Collider2D attackReceiver, GameObject attackDealer)

@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this;
+        else Debug.LogWarning("Attempted to create second instance of Dialogue Manager");
     }
 
     private void Update()

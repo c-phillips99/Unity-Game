@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
 
     public GameState CurrentState;
 
@@ -16,17 +17,22 @@ public class GameManager : MonoBehaviour
     {
         Menu,
         GameAlive,
-        GameDead
+        GameDead,
+        GamePaused,
+        Quit
     }
 
     private void Awake()
     {
-        Instance = this;
-    }
-
-    private void Start()
-    {
-        UpdateGameState(GameState.GameAlive);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void UpdateGameState (GameState newState)
@@ -38,6 +44,7 @@ public class GameManager : MonoBehaviour
             case GameState.Menu:
                 break;
             case GameState.GameAlive:
+                SceneManager.LoadScene(1);
                 break;
             case GameState.GameDead:
                 break;

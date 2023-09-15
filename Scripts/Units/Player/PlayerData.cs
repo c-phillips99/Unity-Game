@@ -1,10 +1,11 @@
 using UnityEngine;
 
 namespace TarodevController {
-    [CreateAssetMenu(fileName = "PlayerData", menuName = "PlayerData")]
+    [CreateAssetMenu(fileName = "PlayerData", menuName = "Data/PlayerData")]
     public class PlayerData : ScriptableObject {
 
         [HideInInspector] public int Health;
+        [HideInInspector] public int Embers;
         [HideInInspector] public bool IsAlive;
         [HideInInspector] public bool IsInvincible;
         [HideInInspector] public Vector2 CurrentPosition;

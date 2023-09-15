@@ -1,0 +1,1 @@
+This is a sign with some text.
